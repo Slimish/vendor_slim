@@ -11,7 +11,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.android.dataroaming=false
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.build.selinux=1
+    ro.build.selinux=1 \
+    persist.sys.root_access=3
 
 # Disable excessive dalvik debug messages
 PRODUCT_PROPERTY_OVERRIDES += \
