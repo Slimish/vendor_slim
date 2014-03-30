@@ -87,7 +87,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     KernelTweaker \
     SlimCenter \
-    SlimFileManager \
+    CMFileManager \
     LatinIME \
     OmniSwitch \
     SlimIRC \
