@@ -76,17 +76,20 @@ PRODUCT_PACKAGES += \
     LiveWallpapersPicker \
     PhaseBeam
 
-# DSPManager
+# DSPManager and Apollo
 PRODUCT_PACKAGES += \
+    Apollo \
     DSPManager \
     libcyanogen-dsp \
     audio_effects.conf
 
 # Extra Optional packages
 PRODUCT_PACKAGES += \
+    KernelTweaker \
     SlimCenter \
     SlimFileManager \
     LatinIME \
+    OmniSwitch \
     SlimIRC \
     BluetoothExt \
     DashClock
