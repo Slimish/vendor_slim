@@ -63,16 +63,12 @@ PRODUCT_PACKAGES += \
     Camera \
     CellBroadcastReceiver \
     Development \
-    SpareParts \
     Superuser \
     su
 
 # Optional packages
 PRODUCT_PACKAGES += \
     Basic \
-    HoloSpiralWallpaper \
-    NoiseField \
-    Galaxy4 \
     LiveWallpapersPicker \
     PhaseBeam
 
@@ -86,11 +82,9 @@ PRODUCT_PACKAGES += \
 # Extra Optional packages
 PRODUCT_PACKAGES += \
     KernelTweaker \
-    SlimCenter \
     CMFileManager \
     LatinIME \
     OmniSwitch \
-    SlimIRC \
     BluetoothExt \
     DashClock
 
