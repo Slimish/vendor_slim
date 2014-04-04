@@ -157,3 +157,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.slim.version=$(SLIM_VERSION) \
     ro.modversion=$(SLIM_MOD_VERSION)
 
+# Default ringtones, notifications and alarm sounds
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.config.ringtone=Themos.ogg \
+    ro.config.notification_sound=Proxima.ogg \
+    ro.config.alarm_alert=Cesium.ogg
