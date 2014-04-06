@@ -20,23 +20,23 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
-    vendor/slim/prebuilt/common/bin/backuptool.sh:system/bin/backuptool.sh \
-    vendor/slim/prebuilt/common/bin/backuptool.functions:system/bin/backuptool.functions \
-    vendor/slim/prebuilt/common/bin/50-slim.sh:system/addon.d/50-slim.sh \
-    vendor/slim/prebuilt/common/bin/99-backup.sh:system/addon.d/99-backup.sh \
-    vendor/slim/prebuilt/common/etc/backup.conf:system/etc/backup.conf
+    vendor/lego/prebuilt/common/bin/backuptool.sh:system/bin/backuptool.sh \
+    vendor/lego/prebuilt/common/bin/backuptool.functions:system/bin/backuptool.functions \
+    vendor/lego/prebuilt/common/bin/50-lego.sh:system/addon.d/50-lego.sh \
+    vendor/lego/prebuilt/common/bin/99-backup.sh:system/addon.d/99-backup.sh \
+    vendor/lego/prebuilt/common/etc/backup.conf:system/etc/backup.conf
 
-# SLIM-specific init file
+# LEGO-specific init file
 PRODUCT_COPY_FILES += \
-    vendor/slim/prebuilt/common/etc/init.local.rc:root/init.slim.rc
+    vendor/lego/prebuilt/common/etc/init.local.rc:root/init.lego.rc
 
 # Copy latinime for gesture typing
 PRODUCT_COPY_FILES += \
-    vendor/slim/prebuilt/common/lib/libjni_latinime.so:system/lib/libjni_latinime.so
+    vendor/lego/prebuilt/common/lib/libjni_latinime.so:system/lib/libjni_latinime.so
 
 # SELinux filesystem labels
 PRODUCT_COPY_FILES += \
-    vendor/slim/prebuilt/common/etc/init.d/50selinuxrelabel:system/etc/init.d/50selinuxrelabel
+    vendor/lego/prebuilt/common/etc/init.d/50selinuxrelabel:system/etc/init.d/50selinuxrelabel
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
@@ -44,17 +44,17 @@ PRODUCT_COPY_FILES += \
 
 # Don't export PS1 in /system/etc/mkshrc.
 PRODUCT_COPY_FILES += \
-    vendor/slim/prebuilt/common/etc/mkshrc:system/etc/mkshrc \
-    vendor/slim/prebuilt/common/etc/sysctl.conf:system/etc/sysctl.conf
+    vendor/lego/prebuilt/common/etc/mkshrc:system/etc/mkshrc \
+    vendor/lego/prebuilt/common/etc/sysctl.conf:system/etc/sysctl.conf
 
 PRODUCT_COPY_FILES += \
-    vendor/slim/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
-    vendor/slim/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit \
-    vendor/slim/prebuilt/common/bin/sysinit:system/bin/sysinit
+    vendor/lego/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
+    vendor/lego/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit \
+    vendor/lego/prebuilt/common/bin/sysinit:system/bin/sysinit
 
 # Workaround for NovaLauncher zipalign fails
 PRODUCT_COPY_FILES += \
-    vendor/slim/prebuilt/common/app/NovaLauncher.apk:system/app/NovaLauncher.apk
+    vendor/lego/prebuilt/common/app/NovaLauncher.apk:system/app/NovaLauncher.apk
 
 # Embed SuperUser
 SUPERUSER_EMBEDDED := true
@@ -99,7 +99,7 @@ PRODUCT_PACKAGES += \
 # easy way to extend to add more packages
 -include vendor/extra/product.mk
 
-PRODUCT_PACKAGE_OVERLAYS += vendor/slim/overlay/common
+PRODUCT_PACKAGE_OVERLAYS += vendor/lego/overlay/common
 
 # Boot animation include
 ifneq ($(TARGET_SCREEN_WIDTH) $(TARGET_SCREEN_HEIGHT),$(space))
@@ -113,7 +113,7 @@ TARGET_BOOTANIMATION_SIZE := $(shell \
   fi )
 
 # get a sorted list of the sizes
-bootanimation_sizes := $(subst .zip,, $(shell ls vendor/slim/prebuilt/common/bootanimation))
+bootanimation_sizes := $(subst .zip,, $(shell ls vendor/lego/prebuilt/common/bootanimation))
 bootanimation_sizes := $(shell echo -e $(subst $(space),'\n',$(bootanimation_sizes)) | sort -rn)
 
 # find the appropriate size and set
@@ -130,32 +130,31 @@ endef
 $(foreach size,$(bootanimation_sizes), $(call check_and_set_bootanimation,$(size)))
 
 PRODUCT_COPY_FILES += \
-    vendor/slim/prebuilt/common/bootanimation/$(TARGET_BOOTANIMATION_NAME).zip:system/media/bootanimation.zip
+    vendor/lego/prebuilt/common/bootanimation/$(TARGET_BOOTANIMATION_NAME).zip:system/media/bootanimation.zip
 endif
 
 # Versioning System
-# KitKat SlimKat freeze code
+# KitKat Lego freeze code
 PRODUCT_VERSION_MAJOR = 4.4.2
-PRODUCT_VERSION_MINOR = build
-PRODUCT_VERSION_MAINTENANCE = 4.1
-ifdef SLIM_BUILD_EXTRA
-    SLIM_POSTFIX := -$(SLIM_BUILD_EXTRA)
+PRODUCT_VERSION_MINOR = Build
+PRODUCT_VERSION_MAINTENANCE = 1
+ifdef LEGO_BUILD_EXTRA
+    LEGO_POSTFIX := -$(LEGO_BUILD_EXTRA)
 endif
-ifndef SLIM_BUILD_TYPE
-    SLIM_BUILD_TYPE := UNOFFICIAL
+ifndef LEGO_BUILD_TYPE
+    LEGO_BUILD_TYPE := UNOFFICIAL
     PLATFORM_VERSION_CODENAME := UNOFFICIAL
-    SLIM_POSTFIX := -$(shell date +"%Y%m%d-%H%M")
+    LEGO_POSTFIX := -$(shell date +"%Y%m%d-%H%M")
 endif
 
 # Set all versions
-SLIM_VERSION := Slim-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)-$(SLIM_BUILD_TYPE)$(SLIM_POSTFIX)
-SLIM_MOD_VERSION := Slim-$(SLIM_BUILD)-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)-$(SLIM_BUILD_TYPE)$(SLIM_POSTFIX)
+LEGO_VERSION := Lego-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)-$(LEGO_BUILD_TYPE)$(LEGO_POSTFIX)
+LEGO_MOD_VERSION := Lego-$(LEGO_BUILD)-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)-$(LEGO_BUILD_TYPE)$(LEGO_POSTFIX)
 
 PRODUCT_PROPERTY_OVERRIDES += \
     BUILD_DISPLAY_ID=$(BUILD_ID) \
-    slim.ota.version=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE) \
-    ro.slim.version=$(SLIM_VERSION) \
-    ro.modversion=$(SLIM_MOD_VERSION)
+    ro.lego.version=$(LEGO_VERSION) \
+    ro.modversion=$(LEGO_MOD_VERSION)
 
 # Default ringtones, notifications and alarm sounds
 PRODUCT_PROPERTY_OVERRIDES += \

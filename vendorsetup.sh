@@ -1,2 +1,2 @@
-add_lunch_combo slim_falcon-userdebug
+add_lunch_combo lego_falcon-userdebug
 
