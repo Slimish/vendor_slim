@@ -1,2 +1,5 @@
+add_lunch_combo lego_d2lte-userdebug
 add_lunch_combo lego_falcon-userdebug
-
+add_lunch_combo lego_hercules-userdebug
+add_lunch_combo lego_mako-userdebug
+add_lunch_combo lego-skyrocket-userdebug
