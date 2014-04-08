@@ -13,6 +13,19 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.selinux=1 \
     persist.sys.root_access=3
+    
+# ROM Statistics and ROM Identification
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.romstats.url=http://www.drdevs.com/stats/lego/ \
+    ro.romstats.name=lego \
+    ro.romstats.version=$(shell date +"%m-%d-%y") \
+    ro.romstats.askfirst=0 \
+    ro.romstats.tframe=1
+    
+# OTA
+PRODUCT_PROPERTY_OVERRIDES += \
+    otaupdater.otatime=$(shell date +%Y%m%d)-0001 \
+    otaupdater.otaver=Build.1-$(shell date +%Y%m%d)
 
 # Disable excessive dalvik debug messages
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -87,7 +100,10 @@ PRODUCT_PACKAGES += \
     LatinIME \
     OmniSwitch \
     BluetoothExt \
-    DashClock
+    DashClock \
+    OTAUpdateCenter \
+    LegoStats \
+    LegoPapers
 
 # Extra tools
 PRODUCT_PACKAGES += \
