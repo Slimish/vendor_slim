@@ -78,7 +78,9 @@ PRODUCT_PACKAGES += \
     CellBroadcastReceiver \
     Development \
     Superuser \
-    su
+    su \
+	ScreenRecorder \
+	libscreenrecorder
 
 # Optional packages
 PRODUCT_PACKAGES += \
