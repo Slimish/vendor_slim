@@ -103,8 +103,7 @@ PRODUCT_PACKAGES += \
     BluetoothExt \
     DashClock \
     OTAUpdateCenter \
-    LegoStats \
-    LegoPapers
+    LegoStats
 
 # Extra tools
 PRODUCT_PACKAGES += \
