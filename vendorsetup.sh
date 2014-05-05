@@ -3,3 +3,4 @@ add_lunch_combo lego_falcon-userdebug
 add_lunch_combo lego_hercules-userdebug
 add_lunch_combo lego_mako-userdebug
 add_lunch_combo lego_skyrocket-userdebug
+add_lunch_combo lego_ls980-userdebug
