@@ -21,11 +21,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.romstats.version=$(shell date +"%m-%d-%y") \
     ro.romstats.askfirst=0 \
     ro.romstats.tframe=1
-    
-# OTA
-PRODUCT_PROPERTY_OVERRIDES += \
-    otaupdater.otatime=$(shell date +%Y%m%d)-0001 \
-    otaupdater.otaver=Build.1-$(shell date +%Y%m%d)
 
 # Disable excessive dalvik debug messages
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -102,7 +97,6 @@ PRODUCT_PACKAGES += \
     OmniSwitch \
     BluetoothExt \
     DashClock \
-    OTAUpdateCenter \
     LegoStats
 
 # Extra tools
