@@ -1,8 +1,10 @@
 add_lunch_combo lego_d2lte-userdebug
 add_lunch_combo lego_d800-userdebug
+add_lunch_combo lego_d801-userdebug
 add_lunch_combo lego_falcon-userdebug
 add_lunch_combo lego_gee-userdebug
 add_lunch_combo lego_hercules-userdebug
+add_lunch_combo lego_m7spr-userdebug
 add_lunch_combo lego_i9300-userdebug
 add_lunch_combo lego_ls980-userdebug
 add_lunch_combo lego_mako-userdebug
