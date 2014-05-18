@@ -178,6 +178,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Default ringtones, notifications and alarm sounds
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.config.ringtone=Themos.ogg \
+    ro.config.ringtone=Titania.ogg \
     ro.config.notification_sound=Proxima.ogg \
     ro.config.alarm_alert=Cesium.ogg
