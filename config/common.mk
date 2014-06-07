@@ -105,7 +105,6 @@ PRODUCT_PACKAGES += \
     KernelTweaker \
     CMFileManager \
     LatinIME \
-    OmniSwitch \
     BluetoothExt \
     DashClock \
     LegoStats
