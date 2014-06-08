@@ -186,6 +186,7 @@ echo MODVERSION: $MODVERSION
 
 # Add changelog
 . $ANDROID_BUILD_TOP/vendor/liquid/tools/changelog
+mv $OUT/Changelog.txt $OUT/$MODVERSION-$TARGET_PRODUCT_FINAL.txt
 
 
 # Pack it up and sign
@@ -215,3 +216,4 @@ echo
 )
 
 exit 0
+
