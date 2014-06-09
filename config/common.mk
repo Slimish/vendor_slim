@@ -51,7 +51,7 @@ PRODUCT_COPY_FILES += \
 
 # Copy libgif for Nova Launcher 3.0
 PRODUCT_COPY_FILES += \
-    vendor/slim/prebuilt/common/lib/libgif.so:system/lib/libgif.so
+    vendor/lego/prebuilt/common/lib/libgif.so:system/lib/libgif.so
 
 # SELinux filesystem labels
 PRODUCT_COPY_FILES += \
