@@ -102,6 +102,7 @@ PRODUCT_PACKAGES += \
 
 # Extra Optional packages
 PRODUCT_PACKAGES += \
+    LegoUpdater \
     KernelTweaker \
     CMFileManager \
     LatinIME \
