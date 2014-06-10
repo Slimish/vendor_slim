@@ -185,7 +185,7 @@ OUTFILE=$OUT/$MODVERSION.zip
 echo MODVERSION: $MODVERSION
 
 # Add changelog
-. $ANDROID_BUILD_TOP/vendor/liquid/tools/changelog
+. $ANDROID_BUILD_TOP/vendor/lego/tools/changelog
 mv $OUT/Changelog.txt $OUT/$MODVERSION-$TARGET_PRODUCT_FINAL.txt
 
 
