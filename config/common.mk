@@ -181,7 +181,7 @@ endif
 PRODUCT_PROPERTY_OVERRIDES += \
     BUILD_DISPLAY_ID=$(BUILD_ID) \
     ro.lego.version=$(LEGO_VERSION) \
-    ro.modversion=$(LEGO_MOD_VERSION)
+    ro.modversion=$(LEGO_VERSION)
 
 # Default ringtones, notifications and alarm sounds
 PRODUCT_PROPERTY_OVERRIDES += \
